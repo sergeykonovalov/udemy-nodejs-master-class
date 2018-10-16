@@ -1,4 +1,5 @@
 const path = require('path');
+const os = require('os');
 
 let fun = () => console.log('Function called');
 
@@ -19,3 +20,7 @@ console.log(__filename);
 console.log(__dirname);
 
 console.log(path.parse(__filename));
+console.log(`Free memory is ~${(os.freemem() / 1024 / 1024).toFixed(2)} Mb`);
+console.log(os.totalmem() / 1024 / 1024);
+console.log(os.userInfo());
+console.log(os.uptime() / 60 / 60 / 24);
