@@ -13,3 +13,5 @@ console.log(module.exports);
 console.log(module.parent);
 console.log(module.children);
 console.log(module.filename);
+console.log(__filename);
+console.log(__dirname);
