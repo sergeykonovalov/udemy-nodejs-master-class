@@ -1,3 +1,5 @@
+const path = require('path');
+
 let fun = () => console.log('Function called');
 
 let firstTimeout = setTimeout(fun, 0);
@@ -15,3 +17,5 @@ console.log(module.children);
 console.log(module.filename);
 console.log(__filename);
 console.log(__dirname);
+
+console.log(path.parse(__filename));
