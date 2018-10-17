@@ -14,3 +14,5 @@ Function `require` will return `module.exports` object of desired module.
 > It is good practice to store imported module as constant.
 
 [JSHint](https://jshint.com) is handy tool to analyze code and find possible issues.
+
+Although module `fs` has two flavors of methods, we shall always strive to use asynchronous (non-blocking).

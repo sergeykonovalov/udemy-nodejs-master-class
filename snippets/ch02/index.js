@@ -1,5 +1,6 @@
 const path = require('path');
 const os = require('os');
+const fs = require('fs');
 
 let fun = () => console.log('Function called');
 
@@ -24,3 +25,14 @@ console.log(`Free memory is ~${(os.freemem() / 1024 / 1024).toFixed(2)} Mb`);
 console.log(os.totalmem() / 1024 / 1024);
 console.log(os.userInfo());
 console.log(os.uptime() / 60 / 60 / 24);
+
+// Synchronous
+let files = fs.readdirSync('./');
+files.forEach((file) => console.log(file));
+
+// Asynchronous
+fs.readdir('./', (err, result) => {
+  if (!err) {
+    result.forEach((file) => console.log(file));
+  }
+});
