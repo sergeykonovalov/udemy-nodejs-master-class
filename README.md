@@ -16,3 +16,8 @@ Function `require` will return `module.exports` object of desired module.
 [JSHint](https://jshint.com) is handy tool to analyze code and find possible issues.
 
 Although module `fs` has two flavors of methods, we shall always strive to use asynchronous (non-blocking).
+
+### Events
+
+Method `.on()` is an alias to `.addListener()`.
+You rarely use event emitter itself, but use it in some class.
