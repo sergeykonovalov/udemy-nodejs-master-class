@@ -31,3 +31,7 @@ Although module `fs` has two flavors of methods, we shall always strive to use a
 
 Method `.on()` is an alias to `.addListener()`.
 You rarely use event emitter itself, but use it in some class.
+
+### HTTP
+
+Web server is an event emitter.
