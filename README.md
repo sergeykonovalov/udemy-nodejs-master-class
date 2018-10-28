@@ -203,3 +203,8 @@ npm i morgan
 ```
 
 By default morgan logs into console, but can configure to write to a log file.
+
+### Environments
+
+Default environment variable is NODE_ENV. Can access via `process.env.NODE_ENV` or via `app.get('env')` (returns `development` as default, if environment variable is not set). 
+

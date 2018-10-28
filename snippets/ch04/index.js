@@ -13,6 +13,9 @@ app.use(morgan('tiny'));
 app.use(logger);
 
 const port = process.env.PORT || 3000;
+const nodeEnv = process.env.NODE_ENV || 'development';
+console.log(`app: ${app.get('env')}`);
+
 const courses = [
   { id: 1, name: 'course1' },
   { id: 2, name: 'course2' },
@@ -69,7 +72,7 @@ app.delete('/api/courses/:id', (req, res) => {
   res.send(course);
 });
 
-app.listen(port, () => console.log(`Listening on port ${port}...`));
+app.listen(port, () => console.log(`Listening on port ${port}, NODE_ENV: ${nodeEnv}`));
 
 function validateCourse(course) {
   const schema = {
