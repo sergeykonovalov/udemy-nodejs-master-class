@@ -181,3 +181,25 @@ Never trust what your application receives, and use validators like [joi](https:
 ```shell
 npm i joi
 ```
+
+Joi has very neat API for validation.
+
+### Middleware
+
+Function, returning result or passing over request to another function.
+Express application is just a bunch of middleware functions (Request Processing Pipeline).
+Middleware function accepts `next` argument, which is reference to next function in pipeline.
+
+> Note that app will go into infinite loop if you forget to call next in middleware.
+
+Middleware functions are executed in sequence.
+
+List of middleware maintained by ExpressJS team:
+http://expressjs.com/en/resources/middleware.html
+
+```shell
+npm i helmet
+npm i morgan
+```
+
+By default morgan logs into console, but can configure to write to a log file.
