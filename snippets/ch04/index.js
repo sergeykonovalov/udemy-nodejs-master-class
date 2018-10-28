@@ -4,6 +4,11 @@ const Joi = require('joi');
 const logger = require('./logger');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const config = require('config');
+
+console.log(config.get('name'));
+console.log(config.get('mail.host'));
+console.log(config.get('mail.password'));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true})); // key1=value1&key2=value2; only used for POST forms

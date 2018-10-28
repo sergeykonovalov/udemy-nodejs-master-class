@@ -208,3 +208,18 @@ By default morgan logs into console, but can configure to write to a log file.
 
 Default environment variable is NODE_ENV. Can access via `process.env.NODE_ENV` or via `app.get('env')` (returns `development` as default, if environment variable is not set). 
 
+### Manage Configurations
+
+```shell
+npm i config
+```
+
+Then create folder `config` and files `environmentName.json`. 
+
+It is not recommended to store credential is source code, so recommendation is to create variables with application name prefix:
+
+```shell
+export appname_password=123
+```
+
+In file `config\custom-environment-variables.json` we can define mapping for custom variables.
