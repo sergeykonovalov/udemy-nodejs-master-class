@@ -169,3 +169,15 @@ export KEY=value
 ```
 
 URL parameters used for obligatory parts, while query parameters are for optional things (e.g. sorting).
+
+### Parsing JSON Objects in Request Body
+
+By default it is not enabled.
+
+#### Validation of Inputs
+
+Never trust what your application receives, and use validators like [joi](https://www.npmjs.com/package/joi) package.
+
+```shell
+npm i joi
+```
