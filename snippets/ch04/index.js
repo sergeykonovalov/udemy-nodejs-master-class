@@ -27,10 +27,7 @@ app.get('/api/courses/:id', (req, res) => {
 
 app.post('/api/courses/', (req, res) => {
   const { error } = validateCourse(req.body);
-  if (error) {
-    res.status(400).send(error.details[0].message);
-    return;
-  }
+  if (error) return res.status(400).send(error.details[0].message);
 
   const course = {
     id: courses.length + 1,
@@ -47,10 +44,7 @@ app.put('/api/courses/:id', (req, res) => {
 
   // Validate submitted course update, or return 400
   const { error } = validateCourse(req.body);
-  if (error) {
-    res.status(400).send(error.details[0].message);
-    return;
-  }
+  if (error) return res.status(400).send(error.details[0].message);
 
   // Update course and return it
   course.name = req.body.name;
