@@ -155,3 +155,15 @@ npm version patch
 
 ## Express
 
+### Install `nodemon`
+
+```shell
+sudo npm i -g nodemon
+nodemon index.js
+```
+
+To set environment variable: 
+
+```shell
+export KEY=value
+```
