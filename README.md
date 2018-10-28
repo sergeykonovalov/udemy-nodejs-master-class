@@ -167,3 +167,5 @@ To set environment variable:
 ```shell
 export KEY=value
 ```
+
+URL parameters used for obligatory parts, while query parameters are for optional things (e.g. sorting).
