@@ -223,3 +223,18 @@ export appname_password=123
 ```
 
 In file `config\custom-environment-variables.json` we can define mapping for custom variables.
+
+### Debugging
+
+```shell
+npm install debug
+```
+Only show debugging messages for name space `app:startup`.
+```shell
+export DEBUG=app:startup
+```
+
+If value of `DEBUG` is empty, there will be no messages to console.
+To post all messages, can use wildcard `DEBUG=app:*`.
+
+> In real world you rarely need many debugging functions in same file. Convetion is to use function name `debug`.

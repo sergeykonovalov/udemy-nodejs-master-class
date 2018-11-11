@@ -6,6 +6,10 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const config = require('config');
 
+// Create debuggers and their name spaces
+const startupDebugger = require('debug')('app:startup');
+const dbDebugger = require('debug')('app:db');
+
 console.log(config.get('name'));
 console.log(config.get('mail.host'));
 console.log(config.get('mail.password'));
@@ -19,7 +23,7 @@ app.use(logger);
 
 const port = process.env.PORT || 3000;
 const nodeEnv = process.env.NODE_ENV || 'development';
-console.log(`app: ${app.get('env')}`);
+startupDebugger(`app: ${app.get('env')}`);
 
 const courses = [
   { id: 1, name: 'course1' },
