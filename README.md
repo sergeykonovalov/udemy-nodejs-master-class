@@ -269,3 +269,19 @@ Path to folder with templates (starting root of application), default value is `
 List of avaialble drivers:
 https://expressjs.com/en/guide/database-integration.html
 
+### Refactoring Routes
+
+#### Move Routes Into `./routes/entities.js`
+
+#### Import Express Router
+
+#### Set Value of `exports` to Router
+
+#### Load Module
+
+#### Define Middleware
+
+- First argument is URL
+- Second argument is router module we shall use
+
+#### Update / Simplify URLs in Router Module
