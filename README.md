@@ -285,3 +285,13 @@ https://expressjs.com/en/guide/database-integration.html
 - Second argument is router module we shall use
 
 #### Update / Simplify URLs in Router Module
+
+## Asynchronious
+
+Not same as concurrent or multi-threaded.
+Async function is not immediatelly executed, it can schedule and run later.
+
+> Node is single waiter collecting orders, while chef is prepareing many already requested.
+
+Any access to disk or network in node is asynchronious.
+
