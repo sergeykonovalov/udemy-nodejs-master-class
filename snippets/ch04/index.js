@@ -6,6 +6,7 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const config = require('config');
 const courses = require('./routes/courses');
+const genres = require('./routes/genres');
 const home = require('./routes/home');
 
 app.set('view engine', 'pug');
@@ -27,6 +28,7 @@ app.use(logger);
 
 app.use('/api/courses', courses);
 app.use('/', home);
+app.use('/api/genres', genres);
 
 const port = process.env.PORT || 3000;
 const nodeEnv = process.env.NODE_ENV || 'development';
