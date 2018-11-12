@@ -6,6 +6,8 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const config = require('config');
 
+app.set('view engine', 'pug');
+
 // Create debuggers and their name spaces
 const startupDebugger = require('debug')('app:startup');
 const dbDebugger = require('debug')('app:db');
@@ -32,7 +34,7 @@ const courses = [
 ];
 
 app.get('/', (req, res) => {
-  res.send('Express is up');
+  res.render('index', { title: 'My Express App', message: 'ToDo' });
 });
 
 app.get('/api/courses/', (req, res) => {

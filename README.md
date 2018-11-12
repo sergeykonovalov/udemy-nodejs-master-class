@@ -9,9 +9,9 @@ Default global object for browsers is `window`, in Node we have `global`.
 
 ### Modules
 
-Value of `module.exports` is just an object, where key is name and value is linked variable or function. 
+Value of `module.exports` is just an object, where key is name and value is linked variable or function.
 
-Therefore, it is valid to write `module.exports.exportedName = localName`. If there is only one function to export, can assign it directly to `module.exports`. 
+Therefore, it is valid to write `module.exports.exportedName = localName`. If there is only one function to export, can assign it directly to `module.exports`.
 
 Function `require` will return `module.exports` object of desired module.
 
@@ -162,7 +162,7 @@ sudo npm i -g nodemon
 nodemon index.js
 ```
 
-To set environment variable: 
+To set environment variable:
 
 ```shell
 export KEY=value
@@ -206,7 +206,7 @@ By default morgan logs into console, but can configure to write to a log file.
 
 ### Environments
 
-Default environment variable is NODE_ENV. Can access via `process.env.NODE_ENV` or via `app.get('env')` (returns `development` as default, if environment variable is not set). 
+Default environment variable is NODE_ENV. Can access via `process.env.NODE_ENV` or via `app.get('env')` (returns `development` as default, if environment variable is not set).
 
 ### Manage Configurations
 
@@ -214,7 +214,7 @@ Default environment variable is NODE_ENV. Can access via `process.env.NODE_ENV` 
 npm i config
 ```
 
-Then create folder `config` and files `environmentName.json`. 
+Then create folder `config` and files `environmentName.json`.
 
 It is not recommended to store credential is source code, so recommendation is to create variables with application name prefix:
 
@@ -238,3 +238,28 @@ If value of `DEBUG` is empty, there will be no messages to console.
 To post all messages, can use wildcard `DEBUG=app:*`.
 
 > In real world you rarely need many debugging functions in same file. Convetion is to use function name `debug`.
+
+### Templating Engines
+
+- [Pug (former Jade)](https://www.npmjs.com/package/pug) 30K+
+- [Mustache](https://www.npmjs.com/package/mustache) 110K+
+- [EJS](https://www.npmjs.com/package/ejs) 250K+
+
+#### 1. Install Package
+
+```shell
+npm i pug
+```
+
+#### 2. Define `view engine`
+
+> Note we do not need to load this module explicitly, it will be automatically loaded.
+
+#### 3. Define `views`
+
+Path to folder with templates (starting root of application), default value is `./views`.
+
+#### 4. Use `res.render`
+
+- First argument is template name
+- Second is object with injected variables
