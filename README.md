@@ -263,3 +263,9 @@ Path to folder with templates (starting root of application), default value is `
 
 - First argument is template name
 - Second is object with injected variables
+
+### Database Integrations
+
+List of avaialble drivers:
+https://expressjs.com/en/guide/database-integration.html
+
