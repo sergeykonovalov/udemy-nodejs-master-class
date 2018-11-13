@@ -13,7 +13,7 @@ const p = new Promise(function(resolve, reject) {
 
 p.then(result => console.log(`OK: ${result}`)).catch(error => console.log(`NOK: ${error}`));
 
-function getUsername(id) {
+async function getUsername(id) {
     console.log('Fetching username...');
     return new Promise((resolve, reject) => {
         setTimeout((id) => {
@@ -47,3 +47,18 @@ getUsername(userId)
     .then((repositories) => getCommits(repositories[0]))
     .then((commits) => console.log('Commits:', commits))
     .catch((error) => console.log('Error:', error));
+
+// Async / Await
+
+async function displayCommits() {
+    try {
+        let username = await getUsername(1);
+        let repositories = await getRepositories(username);
+        let commits = await getCommits(repositories[0]);
+        console.log('Commits:', commits);
+    } catch(error) {
+        console.log('Error:', error);
+    }
+}
+
+displayCommits();

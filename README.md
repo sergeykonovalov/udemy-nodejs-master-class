@@ -318,3 +318,8 @@ Use `Promise.all()` to return new promise which is resolved, when all argument p
 If any of promises rejected, the final result will also be rejected.
 
 Another option is `Promise.race()` method which is fulfilled, once any of argument promises is resolved.
+
+### Async/Await
+
+> If there is an await used inside of function, that function should be declared as async.
+
