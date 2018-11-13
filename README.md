@@ -295,3 +295,6 @@ Async function is not immediatelly executed, it can schedule and run later.
 
 Any access to disk or network in node is asynchronious.
 
+### Callback Hell
+
+To flatten nested structure, we can use named functions instead of anonymous. So it is easier to read and follow sequence of logic when one named function calls another named function.
