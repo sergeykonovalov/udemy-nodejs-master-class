@@ -374,3 +374,15 @@ Model has many methods to find documents, returning `QueryObject` (similar to pr
 - `lte` (less then or equal to)
 - `in` (in)
 - `nin` (not in)
+
+### Regular Expressions
+
+```javascript
+// Starts with
+.find({ author: /^Sergey/ })
+// Ends with
+.find({ author: /Konovalov$/ })
+// Contains
+.find({ author: /*.Sergey*./ })
+```
+
