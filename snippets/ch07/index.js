@@ -50,6 +50,17 @@ async function updateCourse(id) {
     const result = await course.save();
 }
 
+async function updateFirst(id) {
+    const result = await Course.update({ _id: id }, {
+        $set: {
+            author: 'Online Education',
+            published: false
+        }
+    });
+    console.log(result);
+}
+
 // saveCourse();
 // getCourses();
-updateCourse('5beb32e0c09dd2861d3c260f');
+// updateCourse('5beb32e0c09dd2861d3c260f');
+updateFirst('5beb32e0c09dd2861d3c260f');

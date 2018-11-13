@@ -408,3 +408,15 @@ Two approaches:
 
 - query first: find by ID, modify properties and then save
 - update first: update directly and then optionally return result
+
+Query first strategy is useful, when we need to apply some business rules before update of object (e.g. to make sure some updates are only allowed for specific types).
+
+With update first argument is filter, second argument is update object.
+
+#### Mongo Update Operators
+
+Refer to [official documentation](https://docs.mongodb.com/manual/reference/operator/update/). 
+
+Result of update includes total number of found documents, number of updated documents and status if everything is OK: `{ n: 1, nModified: 1, ok: 1 }`.
+
+To get _updated_ document as return, use `.findByIdAndUpdate(id, updateObject, { new: true })`.
