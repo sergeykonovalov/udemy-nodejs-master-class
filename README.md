@@ -323,3 +323,42 @@ Another option is `Promise.race()` method which is fulfilled, once any of argume
 
 > If there is an await used inside of function, that function should be declared as async.
 
+If your code uses await, it should be inside of async function.
+
+## MongoDB
+
+Run Docker container of Mongo:
+
+```shell
+docker run --name mongo-instance -p 27017:27017 -d mongo:latest
+```
+
+Install Mongoose:
+
+```shell
+npm i mongoose
+```
+### Schemas
+
+Schemas used to define shape of stored documents.
+It is specific to _Mongoose, not to MongoDB_.
+
+Available schema types:
+
+- String
+- Number
+- Date
+- Buffer
+- Boolean
+- ObjectID
+- Array
+
+### Model
+
+Model is like instance of a class (schema).
+In other words, to create instance of a class, you need to "compile" schema into model and then create objects off that.
+
+> Use naming conventions to create model capitalized.
+
+Model has many methods to find documents, returning `QueryObject` (similar to promise).
+
