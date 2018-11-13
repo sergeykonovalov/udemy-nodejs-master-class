@@ -396,3 +396,8 @@ Instead of `.select()` method use `.count()`.
 
 Remember to also update `.limit(pageSize)`.
 
+### Importing Data
+
+```shell
+mongoimport --db mongo-exercises --collection courses --drop --file file-with-data.json --jsonArray
+```
