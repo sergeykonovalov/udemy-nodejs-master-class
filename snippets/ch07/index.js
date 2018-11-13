@@ -9,7 +9,8 @@ const courseSchema = new mongoose.Schema({
     author: String,
     tags: [String],
     date: { type: Date, default: Date.now },
-    isPublshed: Boolean
+    isPublished: Boolean,
+    price: Number
 });
 
 const Course = mongoose.model('Course', courseSchema);
@@ -19,7 +20,7 @@ async function saveCourse() {
         name: 'React Native',
         author: 'Udemy',
         tags: ['javascript', 'mobile'],
-        isPublshed: true
+        isPublished: true
     });
     
     const result = await course.save();
@@ -28,7 +29,7 @@ async function saveCourse() {
 
 async function getCourses() {
     const courses = await Course
-    // .find({ author: { $in: ['Udemy', 'Udacity'] }, isPublshed: true, price: { $gte: 10, $lte: 30 } })
+    // .find({ author: { $in: ['Udemy', 'Udacity'] }, isPublished: true, price: { $gte: 10, $lte: 30 } })
     .find()
     // .or([ { author: 'Udemy'}, { isPublished: true } ])
     .and([ { author: 'Udemy'}, { isPublished: true } ])
