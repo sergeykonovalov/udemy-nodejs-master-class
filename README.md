@@ -308,3 +308,13 @@ To flatten nested structure, we can use named functions instead of anonymous. So
 - Rejected (with error)
 
 So, any async function should return a promise inside.
+
+> Whenever you reject a promise, it is recommended to use default `new Error()` object, because it includes all stack trace.
+
+#### Resolving Parallel Promises
+
+Use `Promise.all()` to return new promise which is resolved, when all argument promises are resolved. And returned result will be array of results returned from each promise _in order they defined in argument list_.
+
+If any of promises rejected, the final result will also be rejected.
+
+Another option is `Promise.race()` method which is fulfilled, once any of argument promises is resolved.
