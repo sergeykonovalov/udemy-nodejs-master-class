@@ -432,3 +432,12 @@ To get _updated_ document as return, use `.findByIdAndUpdate(id, updateObject, {
 Unfortunately, mongoose's `document.validate()` returns a promise of void, so you can assign it to a variable.
 
 > Validate both user data and Mongo schema, as it protects you from invalid data due to missed field in some code.
+
+#### SchemaType Validation
+
+- String
+    - lowercase: true will convert string to lowercase
+    - uppercase: true
+    - trim: true
+
+Note that custom getters and setters is probably bad practice, as it will alter the actual data saved and returned.

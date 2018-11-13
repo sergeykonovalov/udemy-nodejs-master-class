@@ -33,6 +33,8 @@ const courseSchema = new mongoose.Schema({
         type: Number,
         min: 3,
         max: 200,
+        set: value => Math.round(value),
+        get: value => Math.round(value),
         required: function() { return this.isPublished; }
     }
 });
