@@ -420,3 +420,9 @@ Refer to [official documentation](https://docs.mongodb.com/manual/reference/oper
 Result of update includes total number of found documents, number of updated documents and status if everything is OK: `{ n: 1, nModified: 1, ok: 1 }`.
 
 To get _updated_ document as return, use `.findByIdAndUpdate(id, updateObject, { new: true })`.
+
+#### Deleting
+
+- `.deleteOne` returns object with status
+- `.deleteMany` returns number of documents deleted
+- `.findByIdAndRemove` returns also _original_ document

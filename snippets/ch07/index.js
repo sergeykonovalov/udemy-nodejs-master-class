@@ -60,7 +60,13 @@ async function updateFirst(id) {
     console.log(result);
 }
 
+async function deleteCourse(id) {
+    const result = await Course.deleteOne({ _id: id });
+    console.log(result);
+}
+
 // saveCourse();
 // getCourses();
 // updateCourse('5beb32e0c09dd2861d3c260f');
-updateFirst('5beb32e0c09dd2861d3c260f');
+// updateFirst('5beb32e0c09dd2861d3c260f');
+deleteCourse('5beb32e0c09dd2861d3c260f');
