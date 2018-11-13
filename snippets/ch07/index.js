@@ -28,7 +28,10 @@ async function saveCourse() {
 
 async function getCourses() {
     const courses = await Course
-    .find({ author: { $in: ['Udemy', 'Udacity'] }, isPublshed: true, price: { $gte: 10, $lte: 30 } })
+    // .find({ author: { $in: ['Udemy', 'Udacity'] }, isPublshed: true, price: { $gte: 10, $lte: 30 } })
+    .find()
+    // .or([ { author: 'Udemy'}, { isPublished: true } ])
+    .and([ { author: 'Udemy'}, { isPublished: true } ])
     .limit(10)
     .sort({ name: 1 }) // 1 = ascending, -1 for descending
     .select({ name: 1, tags: 1 }); 
