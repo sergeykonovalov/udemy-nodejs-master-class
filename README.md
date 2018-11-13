@@ -401,3 +401,10 @@ Remember to also update `.limit(pageSize)`.
 ```shell
 mongoimport --db mongo-exercises --collection courses --drop --file file-with-data.json --jsonArray
 ```
+
+### Updating Documents
+
+Two approaches:
+
+- query first: find by ID, modify properties and then save
+- update first: update directly and then optionally return result

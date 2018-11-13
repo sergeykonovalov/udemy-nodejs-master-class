@@ -39,5 +39,17 @@ async function getCourses() {
     console.log(courses);
 }
 
+async function updateCourse(id) {
+    const course = await Course.findById(id);
+    if (!course) return;
+    course.isPublished = false;
+    course.author = 'Mr. Author';
+    course.price = 4.99;
+    course.tags = ['some', 'more', 'tags'];
+    // course.set({ price: 4.99 });
+    const result = await course.save();
+}
+
 // saveCourse();
-getCourses();
+// getCourses();
+updateCourse('5beb32e0c09dd2861d3c260f');
