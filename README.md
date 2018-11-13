@@ -386,3 +386,6 @@ Model has many methods to find documents, returning `QueryObject` (similar to pr
 .find({ author: /*.Sergey*./ })
 ```
 
+### Counting
+
+Instead of `.select()` method use `.count()`.
