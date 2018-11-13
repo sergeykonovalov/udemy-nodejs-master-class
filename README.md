@@ -389,3 +389,10 @@ Model has many methods to find documents, returning `QueryObject` (similar to pr
 ### Counting
 
 Instead of `.select()` method use `.count()`.
+
+### Pagination
+
+> Formulae for `.skip()` is `(pageNumber - 1) * pageSize`.
+
+Remember to also update `.limit(pageSize)`.
+
