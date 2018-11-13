@@ -362,3 +362,15 @@ In other words, to create instance of a class, you need to "compile" schema into
 
 Model has many methods to find documents, returning `QueryObject` (similar to promise).
 
+### Comparison Operators
+
+> Mongoose is built on the top of MongoDB driver, therefore supports its comparison operators.
+
+- `eq` (equal)
+- `ne` (not equal)
+- `gt` (greater than)
+- `gte` (greater than or equal to)
+- `lt` (less than)
+- `lte` (less then or equal to)
+- `in` (in)
+- `nin` (not in)
