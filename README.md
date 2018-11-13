@@ -426,3 +426,9 @@ To get _updated_ document as return, use `.findByIdAndUpdate(id, updateObject, {
 - `.deleteOne` returns object with status
 - `.deleteMany` returns number of documents deleted
 - `.findByIdAndRemove` returns also _original_ document
+
+### Validation
+
+Unfortunately, mongoose's `document.validate()` returns a promise of void, so you can assign it to a variable.
+
+> Validate both user data and Mongo schema, as it protects you from invalid data due to missed field in some code.
