@@ -33,8 +33,8 @@ async function getCourses() {
     // .or([ { author: 'Udemy'}, { isPublished: true } ])
     .and([ { author: 'Udemy'}, { isPublished: true } ])
     .limit(10)
-    .sort({ name: 1 }) // 1 = ascending, -1 for descending
-    .select({ name: 1, tags: 1 }); 
+    .sort({ name: 1 }) // 1 = ascending, -1 for descending; can use also '-name'
+    .select({ name: 1, tags: 1 }); // can use also 'name tags'
     console.log(courses);
 }
 
