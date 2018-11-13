@@ -16,7 +16,7 @@ const courseSchema = new mongoose.Schema({
         type: String,
         required: true,
         enum: ['web', 'mobile', 'network']
-    }
+    },
     author: String,
     tags: [String],
     date: { type: Date, default: Date.now },
