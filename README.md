@@ -452,3 +452,5 @@ There are two approaches:
 Additional option is hybrid approach, when you have part of document embedded, and reference to complete document.
 
 MongoDB is perfectly fine if referencing IDs are incorrect, it will just return `null`.
+
+With embedded documents, each gets unique own object ID, being nested to main collection document. But these documents can't be saved on their own, _but only in the context of parent document_.
