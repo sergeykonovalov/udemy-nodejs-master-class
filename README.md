@@ -441,3 +441,14 @@ Unfortunately, mongoose's `document.validate()` returns a promise of void, so yo
     - trim: true
 
 Note that custom getters and setters is probably bad practice, as it will alter the actual data saved and returned.
+
+## Modelling References
+
+There are two approaches:
+
+- using references (normalization) => more consistency
+- using embedded documents (denormalization) => more query performance
+
+Additional option is hybrid approach, when you have part of document embedded, and reference to complete document.
+
+MongoDB is perfectly fine if referencing IDs are incorrect, it will just return `null`.
