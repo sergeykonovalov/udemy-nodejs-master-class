@@ -32,4 +32,27 @@ async function listCourses() {
   console.log(courses);
 }
 
+async function updateAuthor(courseId) {
+    const course = await Course.findById(courseId);
+    course.author.name = 'Updated Name';
+    course.save();
+    // note, it is not course.author.save()!
+}
+
+async function updateAthorDirectly(courseId) {
+    Course.update({ _id: courseId }, {
+        $set: {
+            'author.name': 'Another Value'
+        }
+    });
+}
+
+async function unlinkAuthor(courseId) {
+    Course.update({ _id: courseId }, {
+        $unset: {
+            'author': ''
+        }
+    });
+}
+
 createCourse('Node Course', new Author({ name: 'Mosh' }));
